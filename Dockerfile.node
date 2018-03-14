@@ -1,0 +1,11 @@
+FROM systemd_centos_7.3.1611
+
+LABEL maintainer="luke.addison@jetstack.io"
+
+RUN mkdir /kubernetes
+WORKDIR /kubernetes
+
+COPY scripts/kubernetes.sh kubernetes.sh
+
+# configure
+RUN ./kubernetes.sh
